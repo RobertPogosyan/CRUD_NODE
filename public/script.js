@@ -14,3 +14,4 @@ let usname = name.value
     body: JSON.stringify(age = usage , name = usname), // body data type must match "Content-Type" header
 });
 }
+
