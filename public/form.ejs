@@ -8,22 +8,26 @@
 </head>
 <body>
     <ul>
-        <% info.forEach(function(justOne) { %>
+        <% obj.forEach(function(justOne) { %>
         <li>
-        <strong><%= justOne.theaterId %></strong> <br>
-        <strong><%= justOne.location.address.city %> </strong> 
-        <strong><%= justOne.location.address.state %> </strong> 
-        <strong><%= justOne.location.address.zipcode %> </strong> 
-            <strong><%= justOne.location.address.street1 %> </strong> <br> <br>
+        <strong><%= justOne.name %></strong> <br>
+        <strong><%= justOne.price %> </strong>
+        <strong><%= justOne.image %> </strong>
+        <strong><%= justOne.uuid %> </strong>
+            <strong><%= justOne.description %> </strong> <br> <br>
         </li>
         <% }); %>
         </ul>
+    <div>
     <form action="/addName" method="post">
-        <input type="text" id = "text"  required name="name" placeholder="Please type your name"><br><br>
-        <input type="text" name="organization" placeholder="Please type your organization"><br><br>
-        <input type="number" name="birth_year" placeholder="Please type your birth_year"><br><br>
+        <input type="text" id = "text"  required name="name" placeholder="name"><br><br>
+        <input type="number"id = "text" name="price" placeholder="price"><br><br>
+        <input type="text" id = "text" name="image" placeholder="image"><br><br>
+        <input type="number" id = "text" name="uuid" placeholder="uuid"><br><br>
+        <input type="text" id = "text" name="description" placeholder="description"><br><br>
         <input type="submit" onclick = "sendData">
     </form>
+</div>
 <script src = "script.js "></script>
 </body>
 </html>

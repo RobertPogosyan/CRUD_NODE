@@ -19,9 +19,9 @@ app.get("/", function(req, res){
         console.log('Connected to MongoDB!');
         try{
             // const allMovies = await mongoose.connection.db.collection('sessions').find().toArray();
-            let result = await mongoose.connection.db.collection('theaters').find({'location.address.city':'Bloomington'}).toArray();
+            let result = await mongoose.connection.db.collection('RobertDatabase').findOne({}).toArray();
             res.render("../public/form.ejs",{
-                info: result
+                obj: result
             });
         }catch(error){
     console.error('Error retrieving movies:',error);
@@ -30,23 +30,30 @@ app.get("/", function(req, res){
         }
     })
  });
- 
+
 
 
 app.post('/addName', (req, res) => {
     const name = req.body.name;
-    const age = req.body.age;
+    const price = req.body.price;
+    const image = req.body.image;
+    const uuid = req.body.uuid;
+    //asd
+    const descript = req.body.description;
     mongoose.connect(connectionString, { useUnifiedTopology: true });
     const db = mongoose.connection;
     db.on('error', console.error.bind(console, 'Connection error:'));
     db.once('open', async () => {
         console.log('Connected to MongoDB!');
-    
+
         try{
             // const allMovies = await mongoose.connection.db.collection('sessions').find().toArray();
-            await mongoose.connection.db.collection('users').insertOne({
-                id: age,
-                name: name
+            await mongoose.connection.db.collection('RobertDatabase').insertOne({
+                name: name,
+                price: price,
+                image: image,
+                uuid: uuid,
+                description: descript
             })
         }catch(error){
     console.error('Error retrieving movies:',error);
@@ -55,10 +62,9 @@ app.post('/addName', (req, res) => {
         }
         mongoose.connection.close();
     });
-    
+
  });
 
 app.listen(3000, function(){
    console.log("Example is running on port 3000");
 });
-
