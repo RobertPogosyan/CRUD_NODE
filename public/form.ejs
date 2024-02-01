@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <ul>
+        <% info.forEach(function(justOne) { %>
+        <li>
+        <strong><%= justOne.theaterId %></strong> <br>
+        <strong><%= justOne.location.address.city %> </strong> 
+        <strong><%= justOne.location.address.state %> </strong> 
+        <strong><%= justOne.location.address.zipcode %> </strong> 
+            <strong><%= justOne.location.address.street1 %> </strong> <br> <br>
+        </li>
+        <% }); %>
+        </ul>
+    <form action="/addName" method="post">
+        <input type="text" id = "text"  required name="name" placeholder="Please type your name"><br><br>
+        <input type="text" name="organization" placeholder="Please type your organization"><br><br>
+        <input type="number" name="birth_year" placeholder="Please type your birth_year"><br><br>
+        <input type="submit" onclick = "sendData">
+    </form>
+<script src = "script.js "></script>
+</body>
+</html>
