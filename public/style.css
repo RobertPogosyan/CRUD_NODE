@@ -20,9 +20,55 @@
   input[type=submit]:hover {
     background-color: #2b4b37;
   }
-  div{
+  .input{
     width: 350px;
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+      margin: auto;
   }
+.title{
+  font-size:25px;
+  color:green;
+}
+  table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .update{
+    width: 100px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  .delete{
+    width: 100px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+.ititle{
+  text-align:center;
+}
+.upinput{
+    width:350px;
+    border-radius: 5px;
+  background-color: #f2f2f2;;
+  margin: auto;
+  padding: 30px;
+
+}

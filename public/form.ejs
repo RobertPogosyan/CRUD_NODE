@@ -7,19 +7,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <ul>
-        <% obj.forEach(function(justOne) { %>
-        <li>
-        <strong><%= justOne.name %></strong> <br>
-        <strong><%= justOne.price %> </strong>
-        <strong><%= justOne.image %> </strong>
-        <strong><%= justOne.uuid %> </strong>
-            <strong><%= justOne.description %> </strong> <br> <br>
-        </li>
+        <table>
+            <tr>
+
+                <td class="title">Name</td>
+                <td class="title">Price</td>
+                <td class="title">Update</td>
+                <td class="title">Delete</td>
+
+            </tr>
+             <% obj.forEach(function(justOne) { %>
+            <tr>
+                <td><%= justOne.name %><br><br></td>
+                <td><%= justOne.price %><br><br></td>
+                <td><a class="update" href="update/<%= justOne._id %>">Update</a><br><br></td>
+                <td><a class="delete" href="delete/<%= justOne._id %>">Delete</a><br><br></td>
+            </tr>
         <% }); %>
-        </ul>
-    <div>
+        </table>
+        <br>
+    <div class = "input">
     <form action="/addName" method="post">
+        <h1 class = "ititle">Enter the data here</h1>
         <input type="text" id = "text"  required name="name" placeholder="name"><br><br>
         <input type="number"id = "text" name="price" placeholder="price"><br><br>
         <input type="text" id = "text" name="image" placeholder="image"><br><br>

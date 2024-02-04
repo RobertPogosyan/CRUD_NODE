@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"  href = '/style.css';
+</head>
+<body>
+
+    </table>
+    <div class = 'upinput'>
+    <form action="/updateData" method="post">
+        <h1 class = 'ititle'>Enter the changes here</h1>
+        <input id="text" type="text" required name="name" placeholder="Name" value = "<%= obj.name %>"><br><br>
+        <input id="text" type="number" name="price" placeholder="Price" value = "<%= obj.price %>"><br><br>
+        <input id="text" type="text" name="image" placeholder="Image"  value = "<%= obj.image %>"><br><br>
+        <input id="text" type="number" name="uuid" placeholder="UUID"  value = "<%= obj.uuid %>"><br><br>
+        <input id="text" type="text" name="description" placeholder="Description"  value = "<%= obj.description %>"><br><br>
+        <input  type="hidden" name="id"   value = "<%= obj._id %>"><br><br>
+        <input type="submit">
+    </form>
+</div>
+</body></html>
+</html>
